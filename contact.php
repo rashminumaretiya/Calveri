@@ -8,7 +8,7 @@
  * The script will try to use PHP's mail() function,
  * so if it is not properly configured it will fail silently (no error).
  */
-$mailTo     = 'info@taglineinfotech.com';
+echo $mailTo     = 'info@taglineinfotech.com'; die();
 
 /**
  * Set the message that will be shown on success
@@ -31,7 +31,7 @@ $errorMsg   = 'Hm.. seems there is a problem, sorry!';
 
 ?>
 <?php
-if( echo "if 1";
+if( 
     !isset($_POST['name']) ||
     !isset($_POST['email']) ||  
 	!isset($_POST['subject']) ||
@@ -40,12 +40,12 @@ if( echo "if 1";
     empty($_POST['subject']) 
    
 ) {
-	 
-	if( empty($_POST['name']) && empty($_POST['email']) ) { echo "if 1";
+	
+	if( empty($_POST['name']) && empty($_POST['email']) ) {
 		$json_arr = array( "type" => "error", "msg" => $fillMsg );
 		echo json_encode( $json_arr );		
 	} else {
-echo "else 2";
+
 		$fields = "";
 		if( !isset( $_POST['name'] ) || empty( $_POST['name'] ) ) {
 			$fields .= "Name";
@@ -72,7 +72,7 @@ echo "else 2";
 	
 	}
 
-} else { echo "else 1";
+} else {
 
 	// Validate e-mail
 	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
