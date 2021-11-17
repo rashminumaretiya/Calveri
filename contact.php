@@ -31,7 +31,7 @@ $errorMsg   = 'Hm.. seems there is a problem, sorry!';
 
 ?>
 <?php
-if(
+if( echo "if 1";
     !isset($_POST['name']) ||
     !isset($_POST['email']) ||  
 	!isset($_POST['subject']) ||
@@ -40,12 +40,12 @@ if(
     empty($_POST['subject']) 
    
 ) {
-	
-	if( empty($_POST['name']) && empty($_POST['email']) ) {
+	 
+	if( empty($_POST['name']) && empty($_POST['email']) ) { echo "if 1";
 		$json_arr = array( "type" => "error", "msg" => $fillMsg );
 		echo json_encode( $json_arr );		
 	} else {
-
+echo "else 2";
 		$fields = "";
 		if( !isset( $_POST['name'] ) || empty( $_POST['name'] ) ) {
 			$fields .= "Name";
@@ -72,7 +72,7 @@ if(
 	
 	}
 
-} else {
+} else { echo "else 1";
 
 	// Validate e-mail
 	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
