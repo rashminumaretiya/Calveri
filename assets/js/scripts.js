@@ -436,9 +436,6 @@
 	$("#submitButton").on("click", function(event) {
 	    event.preventDefault();
 	    var mydata = $("form").serialize();
-		$("#email").val("Enter Email");
-					$("#phone").val("Enter Phone Number");
-	                $("#subject").val("Enter Subject");
 	    $.ajax({
 	        type: "POST",
 	        dataType: "json",
@@ -456,7 +453,9 @@
 	            $("#alert-msg").show();
 	        },
 	        error: function(xhr, textStatus) {
-	            alert("Not load",textStatus);
+				$("#alert-msg").addClass("alert, alert-danger");
+	            $("#alert-msg").html("Please upload this site own domain!");
+	            $("#alert-msg").show();
 	        }
 	    });
 	});
