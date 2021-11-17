@@ -436,10 +436,13 @@
 	$("#submitButton").on("click", function(event) {
 	    event.preventDefault();
 	    var mydata = $("form").serialize();
+		$("#email").val("Enter Email");
+					$("#phone").val("Enter Phone Number");
+	                $("#subject").val("Enter Subject");
 	    $.ajax({
 	        type: "POST",
 	        dataType: "json",
-	        url: "contact.php",
+	        url: "https://bestwebcreator.com/adage/demo/contact.php",
 	        data: mydata,
 	        success: function(data) {
 	            if (data.type === "error") {
@@ -448,12 +451,6 @@
 	            } else {
 	                $("#alert-msg").addClass("alert, alert-success");
 	                $("#alert-msg").removeClass("alert, alert-danger");
-	                $("#first-name").val("Enter Name");
-	                $("#email").val("Enter Email");
-					$("#phone").val("Enter Phone Number");
-	                $("#subject").val("Enter Subject");
-	                $("#description").val("Enter Message");
-
 	            }
 	            $("#alert-msg").html(data.msg);
 	            $("#alert-msg").show();
