@@ -439,7 +439,7 @@
 	    $.ajax({
 	        type: "POST",
 	        dataType: "json",
-	        url: "../../contact.php",
+	        url: "contact.php",
 	        data: mydata,
 	        success: function(data) {
 	            if (data.type === "error") {
